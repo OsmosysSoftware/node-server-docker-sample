@@ -6,8 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 5000:5000
-
+      - '127.0.0.1:${SERVER_PORT}:${SERVER_PORT}'
     depends_on:
       - mariadb
     environment:
@@ -23,7 +22,7 @@ services:
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
     ports:
-      - 3307:3306
+      - '127.0.0.1:${MARIADB_DOCKER_PORT}:3306'
     volumes:
       - app-db:/var/lib/mysql
 
