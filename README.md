@@ -31,11 +31,17 @@
 ```bash
 $ npm install
 ```
+
+## Configure Env file
+
+Configure the env file by taking reference from `.env.example`
+
 ## Running Typeorm Migration
 
 ```bash
 npm run typeorm:cli migration:run
 ```
+
 ## Running the app
 
 ```bash
