@@ -36,7 +36,7 @@ $ npm install
 
 Configure the env file by taking reference from `.env.example`
 
-## Running Typeorm Migration
+## Running TypeORM Migration
 
 ```bash
 npm run typeorm:cli migration:run
