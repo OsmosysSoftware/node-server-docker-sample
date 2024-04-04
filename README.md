@@ -31,7 +31,11 @@
 ```bash
 $ npm install
 ```
+## Running Typeorm Migration
 
+```bash
+npm run typeorm:cli migration:run
+```
 ## Running the app
 
 ```bash
