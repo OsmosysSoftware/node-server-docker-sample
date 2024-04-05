@@ -9,7 +9,7 @@ const databaseConfig: DataSourceOptions = {
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
   entities: ['dist/user/entities/**/*{.js,.ts}'],
-  migrations: ['dist/migrations'],
+  migrations: ['dist/migrations/**/*{.js,.ts}'],
   migrationsTableName: 'user_migrations',
   synchronize: process.env.NODE_ENV !== 'production',
 };
