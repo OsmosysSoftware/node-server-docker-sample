@@ -39,7 +39,13 @@ Configure the env file by taking reference from `.env.example`
 ## Running TypeORM Migration
 
 ```bash
-npm run typeorm:cli migration:run
+nest build  # require if dist is not generated
+npm run migration:run
+```
+
+## Docker Setup(First-Time Setup)
+```bash
+docker exec -it api npm run migration:run
 ```
 
 ## Running the app
