@@ -1,0 +1,30 @@
+version: '3'
+services:
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '127.0.0.1:${SERVER_PORT}:${SERVER_PORT}'
+    depends_on:
+      - mariadb
+    environment:
+      NODE_ENV: production
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    ports:
+      - '127.0.0.1:${MARIADB_DOCKER_PORT}:3306'
+    volumes:
+      - app-db:/var/lib/mysql
+
+volumes:
+  app-db: ~
